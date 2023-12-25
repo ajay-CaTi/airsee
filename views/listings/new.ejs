@@ -1,0 +1,80 @@
+<%layout('layout/boilerplate.ejs')%>
+
+<body>
+  <form enctype="multipart/form-data" method="post" action="/listings/new">
+    <div>
+      <label for="title">Title</label> <br />
+      <input
+        type="text"
+        name="listing[title]"
+        id="title"
+        placeholder="beautiful place"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <div>
+      <label for="description">Description</label> <br />
+      <textarea
+        name="listing[description]"
+        id="description"
+        placeholder="about beautiful place"
+        class="form-control"
+        cols="30"
+        rows="5"
+      ></textarea>
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <div>
+      <label for="image">Upload Listing Image</label> <br />
+      <input
+        type="file"
+        name="listing[image]"
+        id="image"
+        class="form-control"
+        required
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <div>
+      <label for="price">Price</label> <br />
+      <input
+        type="number"
+        name="listing[price]"
+        id="price"
+        placeholder="1200"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <div>
+      <label for="location">Location</label> <br />
+      <input
+        type="text"
+        name="listing[location]"
+        id="location"
+        placeholder="Jaipur, Rajasthan"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <div>
+      <label for="country">Country</label> <br />
+      <input
+        type="text"
+        name="listing[country]"
+        id="country"
+        placeholder="India"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</body>

@@ -1,0 +1,33 @@
+<%layout('layout/boilerplate.ejs')%>
+
+<div class="row mt-3">
+  <h1 style="text-align: center">Login Platform</h1>
+  <div class="col-6 offset-3">
+    <form novalidate class="needs-validation" action="/login" method="post">
+      <div>
+        <label class="form-label" for="username">Username</label> <br />
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="username"
+          class="form-control"
+        />
+        <div class="invalid-feedback">Please Fill this field</div>
+      </div>
+
+      <div>
+        <label class="form-label" for="password">Password</label> <br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+          class="form-control"
+        />
+        <div class="invalid-feedback">Please Fill this field</div>
+      </div>
+      <button type="submit" class="btn btn-success mt-1 mb-1">Login</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<% layout('layout/boilerplate.ejs')%>
+
+<body>
+  <form
+    novalidate
+    class="needs-validation"
+    method="post"
+    enctype="multipart/form-data"
+    action="/listings/<%=listing._id%>/edit?_method=PUT"
+  >
+    <div>
+      <label for="title">Title</label> <br />
+      <input
+        type="text"
+        name="listing[title]"
+        id="title"
+        placeholder="beautiful place"
+        class="form-control"
+        value="<%=listing.title %>"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+
+    <div>
+      <label for="description">Description</label> <br />
+      <textarea
+        name="listing[description]"
+        id="description"
+        placeholder="about beautiful place"
+        cols="30"
+        rows="5"
+        class="form-control"
+      >
+<%=listing.description %></textarea
+      >
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+
+    <div>
+      <h6>Original listing image</h6>
+      <img
+        src="<%=original_imageUrl%>"
+        alt="<%=listing.title%>"
+        width="300px"
+        height="200px"
+      />
+    </div>
+
+    <div>
+      <label for="image">Upload New Image</label> <br />
+      <input
+        type="file"
+        name="listing[image]"
+        id="image"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+    </div>
+
+    <div>
+      <label for="price">Price</label> <br />
+      <input
+        value="<%=listing.price %>"
+        type="number"
+        name="listing[price]"
+        id="price"
+        placeholder="1200"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+
+    <div>
+      <label for="location">Location</label> <br />
+      <input
+        value="<%=listing.location %>"
+        type="text"
+        name="listing[location]"
+        id="location"
+        placeholder="Jaipur, Rajasthan"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+
+    <div>
+      <label for="country">Country</label> <br />
+      <input
+        value="<%=listing.country %>"
+        type="text"
+        name="listing[country]"
+        id="country"
+        placeholder="India"
+        class="form-control"
+      />
+      <div class="valid-feedback">Looks Good!</div>
+      <div class="invalid-feedback">Please Fill this field</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</body>
